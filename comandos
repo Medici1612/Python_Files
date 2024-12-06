@@ -17,3 +17,7 @@ print(string[1:3]
 ------------------------------
 
 - Função len conta o tamanho da string.
+
+try/except:
+
+try testa o código e quando acha qualquer erro ele pula pro except, diferente do if/else, que nem chega a executar o if caso ocorra algo.
