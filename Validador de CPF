@@ -1,0 +1,46 @@
+print("-----Validador de CPF-----")
+
+cpfdigitado = str(input("Digite o cpf:"))\
+.replace('.', '')\
+.replace('-', '')\
+.replace(' ', '')\
+
+cpf1 = cpfdigitado[:9]
+contador = 10
+soma = 0
+contador_2 = 11
+soma_2 = 0
+
+
+for digito in cpf1:
+    novodigito = int(digito)*contador
+    soma+=novodigito
+    contador-=1
+soma*=10
+soma%=11
+
+if soma > 9:
+    soma = 0
+
+cpf2 = cpfdigitado[:10]
+cpfdigitado[9] == str(soma)
+for digito_2 in cpf2:
+    novodigito_2 = int(digito_2)*contador_2
+    soma_2+=novodigito_2
+    contador_2-=1
+soma_2*=10
+soma_2%=11
+soma_2 = 10
+if soma_2 > 9:
+    soma_2 = 0
+
+
+novocpf = f'{cpf1}{soma}{soma_2}'
+if cpfdigitado == novocpf:
+    print(f"{cpfdigitado} é válido!!")
+else:
+    print("CPF INVÁLIDO!!")
+    exit()
+    
+print(f"O primeiro dígito do cpf é {soma}")
+print(f"O segundo dígito do cpf é {soma_2}")
