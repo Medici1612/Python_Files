@@ -1,0 +1,48 @@
+perguntas = [
+{
+'Pergunta': 'Quanto é 5+5?',
+'Opcões': ['5', '10', '15', '20'],
+'Resposta': '10'
+},
+{
+'Pergunta': 'Quanto é 13+7?',
+'Opcões': ['12', '16', '15', '20'],
+'Resposta': '20'
+},  
+{
+    'Pergunta': 'Quanto é 14*7?',
+'Opcões': ['98', '112', '123', '231'],
+'Resposta': '98'
+}
+]
+
+print("Bem Vindo ao jogo de Perguntas e Respostas!\n")
+
+cont = 0
+for pergunta in perguntas:
+    print(pergunta['Pergunta'])
+
+    opcoes = pergunta['Opcões']
+    for i, opcao in enumerate(pergunta['Opcões']):
+        print(f'{i})', opcao)
+
+    escolha = input("Escolha uma Opção:")
+
+    acerto = False
+    escolha_int = None
+    qtd_opcoes = len(opcoes)
+
+    if escolha.isdigit():
+        escolha_int = int(escolha)
+
+    if escolha_int is not None:
+        if escolha_int >=0 and escolha_int < qtd_opcoes:
+            if opcoes[escolha_int] == pergunta['Resposta']:
+                acerto = True
+                
+    if acerto:
+        print("Acertou")
+        cont+=1
+    else:
+        print("Errou")
+print(f"Você acertou {cont} de 3 perguntas!")
