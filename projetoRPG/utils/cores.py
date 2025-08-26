@@ -1,0 +1,10 @@
+class Cores:
+    RESET = "\033[0m"
+    VERMELHO = "\033[91m"
+    AZUL = "\033[94m"
+    ROXO = "\033[95m"
+    VERDE = "\033[92m"
+    AMARELO = "\033[93m"
+    CYAN = "\033[96m"
+    MAGENTA = "\033[95m"
+    NEGRITO = "\033[1m"
